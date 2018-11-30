@@ -1,0 +1,39 @@
+﻿@model ICollection<pharmacogenomicsManagement.Models.Diplotype>
+
+<!--button-->
+<a class="btn btn-success mt-5" style="margin: 10px" asp-controller="Diplotype" asp-action="Create">Create new Diplotype</a>
+
+@{
+    int count = 1;
+}
+
+<table class="table table-striped table-hover ">
+    <thead>
+        <!--tr代表標籤的意思-->
+        <tr>
+            <th>ID</th>
+            <th>Gene Name</th>
+            <th>Diplotype1</th>
+            <th>Diplotype2</th>
+            <th>Edit Diplotype</th>
+            <th>Delete Diplotype</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (Diplotype diplotype in Model)
+        {
+            <tr>
+                <td>@count</td>
+                <td>@diplotype.Gene.GeneName</td>
+                <td>@diplotype.Diplotype1</td>
+                <td>@diplotype.Diplotype2</td>
+                <td><a class="btn btn-info" asp-area="" asp-controller="Diplotype" asp-action="Update" asp-route-id="@diplotype.DiplotypeId">Edit</a></td>
+                <td><a class="btn btn-danger" asp-area="" asp-controller="Diplotype" asp-action="Delete" asp-route-id="@diplotype.DiplotypeId">Delete</a></td>
+            </tr>
+            count++;
+        }
+    </tbody>
+
+</table>

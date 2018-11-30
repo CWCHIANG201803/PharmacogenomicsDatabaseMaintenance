@@ -1,0 +1,20 @@
+﻿@model pharmacogenomicsManagement.ViewModel.HomeViewModel
+
+<h1>Pharmacogenomics Management Dashboard</h1>
+
+<div class="row">
+
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading" style="font-size:18px">Genes Count</div>
+            <div class="panel-body" style="font-size:18px">There are @Model.GeneCount Genes</div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading" style="font-size:18px">Drugs Count</div>
+            <div class="panel-body" style="font-size:18px">There are @Model.DrugCount Drugs</div>
+        </div>
+    </div>
+</div>

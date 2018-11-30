@@ -1,0 +1,36 @@
+﻿@model IEnumerable<pharmacogenomicsManagement.ViewModel.DrugGeneViewModel>
+
+
+@{ 
+    
+    int count = 1;
+}
+
+<h1></h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>index</th>
+            <th>Gene Name</th>
+            <th>Diplotype1</th>
+            <th>Diplotype2</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@count</td>
+                <td>@item.GeneName</td>
+                <td>@item.Diplotype.Diplotype1</td>
+                <td>@item.Diplotype.Diplotype2</td>
+                <td></td>
+            </tr>
+            count++;
+        }
+    </tbody>
+</table>

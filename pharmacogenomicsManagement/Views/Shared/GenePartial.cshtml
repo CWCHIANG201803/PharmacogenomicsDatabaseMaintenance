@@ -1,0 +1,27 @@
+﻿@model pharmacogenomicsManagement.Models.Gene
+
+
+
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <p style="text-align:center;font-size:16px">@Model.GeneName</p>
+        </div>
+
+        <div class="panel-body">
+            <h2>Diplotype Count: @Model.Diplotype?.Count</h2>
+            <div class="btn-group">
+                @if (Model.Diplotype?.Count == 0)
+                {
+                    <a class="btn btn-default" asp-area="">View Diplotype List</a>
+                }
+                else
+                {
+                    <a class="btn btn-warning" asp-area="" asp-controller="Diplotype" asp-action="Index" asp-route-geneId="@Model.GeneId">View Diplotype list</a>
+                }
+                <a class="btn btn-info" asp-area="" asp-controller="Gene" asp-action="Update" asp-route-id="@Model.GeneId">Edit</a>
+                <a class="btn btn-danger" asp-area="" asp-controller="Gene" asp-action="Delete" asp-route-id="@Model.GeneId">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>

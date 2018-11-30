@@ -1,0 +1,15 @@
+﻿@model IEnumerable<pharmacogenomicsManagement.Models.Gene>
+
+
+<a class="btn btn-success mt-5" style="margin: 10px" asp-controller="Gene" asp-action="Create">Create new Gene</a>
+
+
+<div class="row">
+    @foreach (var Gene in Model)
+    {
+        // 這個program把藍色區塊稱之為partial
+        // 迴圈的功能就是可以把每一個block用迴圈讀出來
+        // 然後顯示在頁面上
+        @Html.Partial("GenePartial", Gene)
+    }
+</div>
